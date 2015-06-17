@@ -134,7 +134,7 @@
     
     // Update the score
     self.scoreLabel.text = [NSString stringWithFormat:@"score: %d", score];
-    self.highScoreLabel.text = [NSString stringWithFormat:@"best score: %d", self.game.highScore];
+    self.highScoreLabel.text = [NSString stringWithFormat:@"best: %d", self.game.highScore];
     
 }
 
