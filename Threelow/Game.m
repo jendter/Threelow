@@ -25,7 +25,7 @@
     if (self) {
         
         NSMutableArray *mutableDieSlots = [NSMutableArray new];
-        _dieSlots = [NSMutableArray new];
+        //_dieSlots = [NSMutableArray new];
         for (int counter = 0; counter < numOfSlots; counter++) {
             DieSlot *newDieSlot = [[DieSlot alloc] init];
             [mutableDieSlots addObject:newDieSlot];
@@ -64,7 +64,7 @@
         numOfDieWithValues == 0
         ) {
             // If the player has picked at least one die OR
-            // there are no dice (the game has not yet begun OR
+            // there are no dice (the game has not yet begun
             int counter = 0;
             for (DieSlot *dieSlot in self.dieSlots) {
                 if (!dieSlot.isHeld) {
@@ -80,16 +80,7 @@
 
 - (void)endGame
 {
-    int counter = 0;
-    for (DieSlot *dieSlot in self.dieSlots) {
-        if (!dieSlot.isHeld) {
-            [dieSlot rollDie];
-        } else {
-            dieSlot.isHoldableThisRound = NO;
-        }
-        
-        counter++;
-    }
+    // For future expansion, if needed
 }
 
 @end

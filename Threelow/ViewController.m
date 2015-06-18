@@ -42,12 +42,13 @@
     }
     
     [self.game endGame];
-    [self.game rollDice];
+    //[self.game rollDice];
     
     [self refreshView];
 }
 
-- (IBAction)holdDie:(id)sender {
+- (IBAction)holdDie:(id)sender
+{
 
     NSInteger indexOfButton = [self.diceButtons indexOfObject:sender];
     DieSlot *dieSlotToChange = self.game.dieSlots[indexOfButton];
@@ -101,7 +102,9 @@
         }
         
         // Change the numbers on the on screen dice
-        if ([dieSlot.value isEqual:@1]) {
+        if (dieSlot.value == nil) {
+            [buttonToTest setTitle:@"X" forState:UIControlStateNormal];
+        } else if ([dieSlot.value isEqual:@1]) {
             [buttonToTest setTitle:@"⚀" forState:UIControlStateNormal];
             //buttonToTest.titleLabel.text = @"⚀";
         } else if ([dieSlot.value isEqual:@2]) {
